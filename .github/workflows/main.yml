@@ -14,12 +14,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Disable isolated builds so pip uses our forced version of setuptools
+      # FIX: Install wheel along with the older setuptools
       - name: Install LibreLingo Exporter safely
         run: |
-          pip install "setuptools<66.0.0"
+          pip install "setuptools<66.0.0" wheel
           pip install librelingo-json-export --no-build-isolation
 
-      # Replicating the exact command LibreLingo's action runs under the hood
       - name: Validate Course Structure
         run: librelingo-json-export . /tmp/output-test-delete-me
