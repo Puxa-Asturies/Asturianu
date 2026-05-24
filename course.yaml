@@ -2,11 +2,11 @@
 
 Course:
   Language:
-    Name: [Target Language extended]
-    IETF BCP 47: [Target Language contracted lowercase]
+    Name: Asturian
+    IETF BCP 47: ast
   For speakers of:
-    Name: [Base Language extended]
-    IETF BCP 47: [Base Language contracted lowercase]
+    Name: English
+    IETF BCP 47: en
   License:
     Name: Attribution-ShareAlike 4.0 International
     Short name: CC BY-SA 4.0
@@ -27,6 +27,10 @@ Course:
     - "Ü"
     - "ñ"
     - "Ñ"
+    - "Ḥ"
+    - "ḥ"
+    - "Ḷ"
+    - "ḷ"
     - "¿"
     - "¡"
 
