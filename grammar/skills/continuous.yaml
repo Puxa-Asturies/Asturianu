@@ -17,9 +17,12 @@ Mini-dictionary:
     - cooking: cocinando
     - we are: tamos
     - the: la
-    - cena: dinner
+    - dinner: cena
+    - we: nós
+    
   Asturian:
     - cocinando: cooking
     - tamos: we are
     - la: the
     - cena: dinner
+    - nós: we
