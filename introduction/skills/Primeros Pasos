@@ -1,0 +1,40 @@
+Skill:
+  Name: Primeros Pasos
+  Vocabulary:
+    - Word:
+        Translation: "Hola"
+        Meaning: "Hello"
+    - Word:
+        Translation: "Gracies"
+        Meaning: "Thank you"
+    - Word:
+        Translation: "Bones díes"
+        Meaning: "Good day"
+    - Word:
+        Translation: "Bones nueches"
+        Meaning: "Good night"
+    - Word:
+        Translation: "Bien"
+        Meaning: "Good"
+    - Word:
+        Translation: "Mal"
+        Meaning: "Bad"
+  Phrases:
+    - Phrase:
+        Translation: "¿Cómo tas?"
+        Meaning: "How are you?"
+    - Phrase:
+        Translation: "¿D'ónde yes?"
+        Meaning: "Where are you from?"
+    - Phrase:
+        Translation: "¿Cómo te llames?"
+        Meaning: "What is your name?"
+    - Phrase:
+        Translation: "¿Qué tiempu tienes?"
+        Meaning: "How old are you?"
+    - Phrase:
+        Translation: "Llámome Xuan."
+        Meaning: "My name is Juan."
+    - Phrase:
+        Translation: "Soi d'Asturies."
+        Meaning: "I am from Asturias."
