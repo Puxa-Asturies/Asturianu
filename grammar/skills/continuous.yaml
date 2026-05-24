@@ -5,9 +5,9 @@ Skill:
 New words: []
 
 Phrases:
-  - Phrase: Nós tamos cocinando la cena
+  - Phrase: nós tamos cocinando la cena
     Alternative versions:
-      - Tamos cocinando la cena
+      - tamos cocinando la cena
     Translation: We are cooking dinner
     Alternative translations:
       - We're cooking dinner
@@ -15,14 +15,14 @@ Phrases:
 Mini-dictionary:
   English:
     - cooking: cocinando
-    - we are: tamos
+    - are: tamos
     - the: la
     - dinner: cena
     - we: nós
     
   Asturian:
     - cocinando: cooking
-    - tamos: we are
+    - tamos: are
     - la: the
     - cena: dinner
     - nós: we
