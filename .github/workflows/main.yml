@@ -14,15 +14,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Explicitly add the local python bin directory to the GitHub Actions PATH
-      - name: Configure local PATH
-        run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
-
       - name: Install LibreLingo Exporter safely
         run: |
           pip install "setuptools<66.0.0" wheel
           pip install librelingo-json-export --no-build-isolation
 
-      # Now the raw command will be discovered flawlessly
+      # FIX: Call the compiler using its exact, absolute installation path
       - name: Validate Course Structure
-        run: librelingo-json-export . /tmp/output-test-delete-me
+        run: ~/.local/bin/librelingo-json-export . /tmp/output-test-delete-me
