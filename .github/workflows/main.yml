@@ -14,15 +14,18 @@ jobs:
         with:
           python-version: '3.10'
 
-      # FIX 1: Upgrade pip and install packages under a clean target directory
+      # Standard dependency setup that worked earlier
       - name: Install LibreLingo Exporter safely
         run: |
-          pip install --upgrade pip
           pip install "setuptools<66.0.0" wheel
           pip install librelingo-json-export --no-build-isolation
 
-      # FIX 2: Dynamically locate the command-line script location and run it
+      # FIX: Run the application directly using a tiny custom Python script
       - name: Validate Course Structure
         run: |
-          export PATH="$(python -c 'import sys, os; print(os.path.join(sys.prefix, "bin"))'):$PATH"
-          librelingo-json-export . /tmp/output-test-delete-me
+          python -c "
+          import sys
+          from librelingo_json_export.cli import main
+          sys.argv = ['librelingo-json-export', '.', '/tmp/output-test-delete-me']
+          main()
+          "
