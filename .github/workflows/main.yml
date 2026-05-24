@@ -19,6 +19,8 @@ jobs:
           pip install "setuptools<66.0.0" wheel
           pip install librelingo-json-export --no-build-isolation
 
-      # FIX: Call the compiler using its exact, absolute installation path
+      # FIX: Dynamically find the active Python script folder and run the exporter
       - name: Validate Course Structure
-        run: ~/.local/bin/librelingo-json-export . /tmp/output-test-delete-me
+        run: |
+          BIN_DIR=$(python -c "import sysconfig; print(sysconfig.get_path('scripts'))")
+          $BIN_DIR/librelingo-json-export . /tmp/output-test-delete-me
