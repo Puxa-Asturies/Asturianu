@@ -1,3 +1,5 @@
+name: Verify course
+
 on: [push]
 
 jobs:
@@ -5,15 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     name: Verify course
     steps:
-      - uses: actions/checkout@v2
-      
+      - uses: actions/checkout@v4
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # FIX: Force-downgrade setuptools so old PyYAML can compile safely
-      - name: Downgrade setuptools for legacy PyYAML compatibility
-        run: pip install "setuptools<66.0.0"
+      # Disable isolated builds so pip uses our forced version of setuptools
+      - name: Install LibreLingo Exporter safely
+        run: |
+          pip install "setuptools<66.0.0"
+          pip install librelingo-json-export --no-build-isolation
 
-      - uses: LibreLingo/course-ci@main
+      # Replicating the exact command LibreLingo's action runs under the hood
+      - name: Validate Course Structure
+        run: librelingo-json-export . /tmp/output-test-delete-me
