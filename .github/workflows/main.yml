@@ -1,12 +1,9 @@
-on:
-  push:
-    branches: [ main ]
+on: [push]
+
 jobs:
-  build:
+  verify-course:
     runs-on: ubuntu-latest
-    container:
-      image: librelingo/librelingo:latest
+    name: Verify course
     steps:
-      - uses: actions/checkout@v4
-      - name: Build Course Webapp
-        run: librelingo build
+      - uses: actions/checkout@v2
+      - uses: LibreLingo/course-ci@main
