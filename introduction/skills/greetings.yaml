@@ -11,17 +11,15 @@ New words:
       - mouse3
 
 Phrases:
-  - Phrase: bonos díes
-    Alternative versions:
-      - bonos díes, soi Cecilia.
-    Translation: good morning
-    Alternative translations:
-      - good day!
+  - Phrase: bon día
+    Translation: good day
 
 Mini-dictionary:
   English:
     - mouse: ['mure']
-    - good morning: ['bonos díes']
+    - day: ['día']
+    - good: ['bon']
   Asturian:
-    - bonos díes: ['good morning']
+    - bon: ['good']
     - mure: ['mouse']
+    - día: ['mure']
