@@ -20,12 +20,19 @@ jobs:
           pip install "setuptools<66.0.0" wheel
           pip install librelingo-json-export --no-build-isolation
 
-      # FIX: Run the application directly using a tiny custom Python script
-      - name: Validate Course Structure
+      # CHANGED: Saved to './compiled-course' instead of /tmp so GitHub can find it
+      - name: Validate and Compile Course Structure
         run: |
           python -c "
           import sys
           from librelingo_json_export.cli import main
-          sys.argv = ['librelingo-json-export', '.', '/tmp/output-test-delete-me']
+          sys.argv = ['librelingo-json-export', '.', './compiled-course']
           main()
           "
+
+      # NEW: Packages your compiled course folder into a downloadable zip file
+      - name: Upload Compiled Course Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: asturian-course-json
+          path: ./compiled-course
