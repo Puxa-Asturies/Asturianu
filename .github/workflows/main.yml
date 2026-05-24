@@ -1,9 +1,16 @@
-on: [push]
-
+on:
+  push:
+    branches: [ main ]
 jobs:
-  verify-course:
+  build:
     runs-on: ubuntu-latest
-    name: Verify course
     steps:
-      - uses: actions/checkout@v2
-      - uses: LibreLingo/course-ci@main
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install LibreLingo
+        run: pip install librelingo
+      - name: Build Course Webapp
+        run: librelingo build
